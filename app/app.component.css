@@ -1,0 +1,145 @@
+/************ DASHBOARD ************/
+.dashboard {
+    width: 85%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    background: #7d2535;
+    padding: 20px 0px;
+    border-radius: 5px;
+}
+
+.searchbar {
+    display: flex;
+    background: rgb(32, 178, 170);
+    height: 30px;
+    border-radius: 5px;
+    padding: 0px 5px;
+}
+
+.icon_containter {
+    width: 30px;
+    /*height: 25px;*/
+    padding-right: 2px;
+}
+
+.searchbar_text {
+    width: 150px;
+    min-width: 150px;                       /* Come handy when rescaling */
+    /*height: 19px;*/
+    border: solid rgb(32, 178, 170);
+    padding-left: 5px;
+}
+
+.icon {
+    width: 100%;
+}
+
+/************ END DASHBOARD ************/
+
+/*+++++++++ PRODUCT CATALOGUE +++++++++*/
+.product_dashboard {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.product_categories {
+    width: 100%;
+    justify-content: flex-start;
+    display: flex;
+}
+
+.product_list {
+    /*width: 100%;*/
+    height: 350px;
+    border: solid black;
+    background-color: aquamarine;
+    border-width: 0px 1px 1px 1px;
+    padding: 20px;
+}
+
+.product_categories button, .product_categories div {
+    padding: 5px 20px;
+    border-style: solid;
+    border-color: black;
+}
+
+.product_category_nborder, .product_category_lborder {
+    cursor: pointer;
+    /*background-color: rgb(127, 255, 212, 0.4);*/
+    /*opacity: 0.4;*/
+}
+
+/*.product_category_nborder:hover, .product_category_lborder:hover {
+    background-color: rgb(127, 255, 212);
+}
+
+.product_category_nborder:focus, .product_category_lborder:focus {
+    background-color: rgb(127, 255, 212);
+    border-width: 1px 1px 0px 0px;
+}*/
+
+.product_category_nborder {
+    border-width: 1px 1px 1px 0px;
+}
+
+.product_category_lborder {
+    border-width: 1px 1px 1px 1px;
+}
+
+.line {
+    border-width: 0px 0px 1px 0px;
+    width: 100%;
+}
+
+.product_container {
+    width: 150px;
+    text-align: center;
+}
+
+.product_container:hover {
+    border: 1px solid rgb(43, 223, 163);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.product_image img {
+    width: 100%;
+}
+
+/*+++++++++ PRODUCT CATALOGUE ++++++++++*/
+
+
+/*========== PRODUCT DETAILS ===========*/
+.product_detail {
+    display: flex;
+}
+
+.product_detail_image_container {
+    width: 33%;
+    margin-left: 3%;
+    min-width: 150px;
+    border: solid 1px black;
+}
+
+.product_detail_image_container img {
+    width: 100%;
+}
+
+.product_detail_text_container {
+    width: 33%;
+
+}
+
+.product_detail_text_container h1, .product_detail_text_container h2 {
+    margin: 0px;
+    margin-left: 10%;
+}
+
+.product_detail_button {
+    background-color: white;
+    color: black;
+    border: 2px solid aquamarine;
+    border-radius: 2px;
+}

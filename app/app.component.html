@@ -1,0 +1,97 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+
+<div class="dashboard">
+  <span style="color: white;">Tech Purchase</span>
+  <div class="searchbar">
+    <div class="icon_containter">
+      <img class="icon" src="../assets/search_left.png" alt="Search:">
+    </div>
+    <input type="text" class="searchbar_text" [(ngModel)]="searchBox" placeholder="Search...">
+  </div>
+</div>
+<br/>
+<div class="product_dashboard">
+  <div class="product_categories">
+
+    <div class="product_category_lborder" [style.background-color]="option == 0 ? 'rgb(127, 255, 212, 1)' : 'rgb(127, 255, 212, 0.4)'"
+                                          [style.border-bottom-width.px]="option == 0 ? '0' : '1'"
+                                          (click)="showAll()">All
+    </div>
+    
+    <div class="product_category_nborder" [style.background-color]="option == 1 ? 'rgb(127, 255, 212, 1)' : 'rgb(127, 255, 212, 0.4)'"
+                                          [style.border-bottom-width.px]="option == 1 ? '0' : '1'"
+                                          (click)="showPC()">PCs
+    </div>
+
+    <div class="product_category_nborder" [style.background-color]="option == 2 ? 'rgb(127, 255, 212, 1)' : 'rgb(127, 255, 212, 0.4)'"
+                                          [style.border-bottom-width.px]="option == 2 ? '0' : '1'"
+                                          (click)="showPh()">Phones
+    </div>
+
+    <div class="product_category_nborder" [style.background-color]="option == 3 ? 'rgb(127, 255, 212, 1)' : 'rgb(127, 255, 212, 0.4)'"
+                                          [style.border-bottom-width.px]="option == 3 ? '0' : '1'"
+                                          (click)="showTa()">Tablet
+    </div>
+    <!--<button class="product_category_lborder" (click)="showAll()">All</button>
+    <button class="product_category_nborder" (click)="showPC()">PCs</button>
+    <button class="product_category_nborder" (click)="showPh()">Phones</button>
+    <button class="product_category_nborder" (click)="showTa()">Tablets</button>-->
+    <div class="line"></div>
+  </div>
+  <div class="product_list">
+
+    <div *ngIf="option == 0; else showSection">
+      <a href="#section_2">
+        <div class="product_container"  (click)="getProductInfo(product)" *ngFor="let product of productList | filter: searchBox">
+          <div class="product_image">
+            <img [src]="(product.product_image)">
+          </div>
+          <div>{{ product.name }}</div>
+          <div>€{{ product.price }}</div>
+        </div>
+      </a>
+    </div>
+
+    <ng-template #showSection>
+      <div *ngFor="let person of people | filter: searchBox">
+        <div *ngIf="person.age == option">
+          {{ person.name }}
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+<section id="#section_2" class="product_detail" *ngIf="productDetail">
+  <div class="product_detail_image_container">
+    <img [src]="(currentProduct.product_image)">
+  </div>
+  <div class="product_detail_text_container">
+    <h1>{{ currentProduct.name }}</h1>
+    <h2>Precio: €{{ productDetail.price }}</h2>
+    <h2>Envio: {{ productDetail.delivery }} dias</h2>
+    <h2>Propiedades: <button class="product_detail_button">{{ productDetail.storage }}GB + {{ productDetail.ram }}GB + {{ productDetail.graphics }}</button></h2>
+
+  </div>
+</section>
+
+
+<!--<a class="nav-link zsh-link zsh-link--nav" href="#section-1">
+    Minimalist
+  </a>-->
+
+
+
+<!--<div>
+  <ul>
+    <li *ngFor="let person of people | filter: searchBox">
+      {{ person.name }}
+    </li>
+  </ul>
+</div>-->
