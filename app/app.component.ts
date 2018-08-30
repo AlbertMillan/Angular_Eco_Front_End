@@ -10,6 +10,7 @@ export class AppComponent {
   productList:any;
   productDetail:any;
   currentProduct:any;
+  currentProductDetail: any;
 
   title = 'My first App!';
 
@@ -52,10 +53,15 @@ export class AppComponent {
   getProductInfo(product){
     this.authService.getProductDetails( 'specs/', product.id ).subscribe( res => {
       console.log(res);
-      this.productDetail = res[0];
+      this.productDetail = res;
     });
 
     this.currentProduct = product;
+  }
+
+  getCurrentProduct(item){
+    console.log(item);
+    this.currentProductDetail = item;
   }
 
   showAll() {

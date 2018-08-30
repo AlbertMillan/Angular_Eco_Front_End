@@ -74,10 +74,50 @@
   </div>
   <div class="product_detail_text_container">
     <h1>{{ currentProduct.name }}</h1>
-    <h2>Precio: €{{ productDetail.price }}</h2>
-    <h2>Envio: {{ productDetail.delivery }} dias</h2>
-    <h2>Propiedades: <button class="product_detail_button">{{ productDetail.storage }}GB + {{ productDetail.ram }}GB + {{ productDetail.graphics }}</button></h2>
-
+    <h2>Envio: {{ productDetail[0].delivery }} dias</h2>
+    <h2>Opcion: </h2>
+    <div class="product_detail_button" (click)="getCurrentProduct(item)" *ngFor="let item of productDetail">{{ item.id }}</div>
+    <h2>Precio: €{{ productDetail[0].price }}</h2>
+    <div class="comprar">Comprar</div>
+  </div>
+  <div class="product_detail_info">
+    <div class="title">Propiedades</div>
+    <div class="text_container">
+      <div class="column">
+          <div>Sistema Operativo:</div>
+          <div>Procesador:</div>
+          <div>CPU:</div>
+          <div>Memoria de Disco Duro:</div>
+          <div>Memoria RAM:</div>
+          <div>Tipo de RAM:</div>
+          <div>Tarjeta Grafica: </div>
+          <div>Camara: </div>
+          <div>Bateria:</div>
+          <div>Duracion de bateria: </div>
+      </div>
+      <div class="column">
+          <div>Windows 10 en Español</div>
+          <div>{{ currentProductDetail.processor }}</div>
+          <div>Intel Core {{ currentProductDetail.cpu }}</div>
+          <div>{{ currentProductDetail.storage }}GB</div>
+          <div>{{ currentProductDetail.ram }}GB</div>
+          <div>{{ currentProductDetail.ramType }}</div>
+          <div>NVIDIA {{ currentProductDetail.graphics }}</div>
+          <div>{{ currentProductDetail.camara }}MP</div>
+          <div>{{ currentProductDetail.battery }}mAh</div>
+          <div>{{ currentProductDetail.batteryLife }} horas</div>
+      </div>
+      <!-- <div>Sistema Operativo (OS): Windows 10 en Español</div>
+      <div>Procesador: {{ currentProductDetail.processor }}</div>
+      <div>CPU: Intel Core {{ currentProductDetail.cpu }}</div>
+      <div>Memoria de Disco Duro: {{ currentProductDetail.storage }}GB</div>
+      <div>Memoria RAM: {{ currentProductDetail.ram }}GB</div>
+      <div>Tipo de RAM: {{ currentProductDetail.ramType }}</div>
+      <div>Tarjeta Grafica: NVIDIA{{ currentProductDetail.graphics }}</div>
+      <div>Camara: {{ currentProductDetail.camara }}MP</div>
+      <div>Bateria: {{ currentProductDetail.battery }}mAh</div>
+      <div>Duracion de bateria: {{ currentProductDetail.batteryLife }} horas</div> -->
+    </div>
   </div>
 </section>
 
